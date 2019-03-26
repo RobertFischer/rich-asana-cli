@@ -20,33 +20,79 @@ extra-source-files:
 description:         Please see the README on Github at <https://github.com/githubuser/rich-asana-cli#readme>
 
 dependencies:
-- base >= 4.11 && < 10
-- rio >= 0.1.8.0
+  - base >= 4.11 && < 10
+  - rio >= 0.1.8.0
 
+default-extensions:
+  - AutoDeriveTypeable
+  - BangPatterns
+  - BinaryLiterals
+  - ConstraintKinds
+  - DataKinds
+  - DefaultSignatures
+  - DeriveDataTypeable
+  - DeriveFoldable
+  - DeriveFunctor
+  - DeriveGeneric
+  - DeriveTraversable
+  - DoAndIfThenElse
+  - EmptyDataDecls
+  - ExistentialQuantification
+  - FlexibleContexts
+  - FlexibleInstances
+  - FunctionalDependencies
+  - GADTs
+  - GeneralizedNewtypeDeriving
+  - InstanceSigs
+  - KindSignatures
+  - LambdaCase
+  - MonadFailDesugaring
+  - MultiParamTypeClasses
+  - MultiWayIf
+  - NamedFieldPuns
+  - NoImplicitPrelude
+  - OverloadedStrings
+  - PartialTypeSignatures
+  - PatternGuards
+  - PolyKinds
+  - RankNTypes
+  - RecordWildCards
+  - ScopedTypeVariables
+  - StandaloneDeriving
+  - TypeFamilies
+  - TypeSynonymInstances
+  - ViewPatterns
+  - TemplateHaskell
+  - TupleSections
+  - UnboxedTuples
+  - QuasiQuotes
+  - DeriveAnyClass
+  - DeriveLift
+   
 ghc-options:
-- -Wall
-- -Wcompat
-- -Widentities
-- -Wincomplete-record-updates
-- -Wincomplete-uni-patterns
-- -Wpartial-fields
-- -Wredundant-constraints
+  - -Wall
+  - -Wcompat
+  - -Widentities
+  - -Wincomplete-record-updates
+  - -Wincomplete-uni-patterns
+  - -Wpartial-fields
+  - -Wredundant-constraints
 
 library:
   source-dirs: src
 
 executables:
-  rich-asana-cli-exe:
+  asana:
     main:                Main.hs
     source-dirs:         app
     dependencies:
-    - rich-asana-cli
-    - optparse-simple
-
+      - rich-asana-cli
+      - optparse-simple
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+
 
 tests:
   rich-asana-cli-test:
